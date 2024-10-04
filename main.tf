@@ -34,6 +34,7 @@ provider "aws" {
 
 provider "azurerm" {
   features {}
+  skip_provider_registration = true
 }
 
 data "terraform_remote_state" "vpc" {
