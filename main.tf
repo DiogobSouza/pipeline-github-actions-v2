@@ -39,9 +39,9 @@ provider "azurerm" {
 data "terraform_remote_state" "vpc" {
   backend = "s3"
   config = {
-    bucket = "danielgil-remote-state"
+    bucket = "diogosouza-remote-state"
     key    = "aws-vpc/terraform.tfstate"
-    region = "eu-central-1"
+    region = "us-east-1"
   }
 }
 
@@ -49,7 +49,7 @@ data "terraform_remote_state" "vnet" {
   backend = "azurerm"
   config = {
     resource_group_name  = "rg-terraform-state"
-    storage_account_name = "danielgilterraformstate"
+    storage_account_name = "diogosouzaterraformstate"
     container_name       = "remote-state"
     key                  = "azure-vnet/terraform.tfstate"
   }
